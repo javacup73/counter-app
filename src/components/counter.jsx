@@ -10,6 +10,10 @@ class Counter extends React.Component {
     fontWeight: "bold",
     color: "black",
   };
+  //constructor() {
+  //  super();
+  //  this.handleIncrement = this.handleIncrement.bind(this);
+  // }
   renderTags() {
     if (this.state.tags.length === 0) return <p>There are no tags</p>;
     return (
@@ -20,9 +24,10 @@ class Counter extends React.Component {
       </ul>
     );
   }
-  handleIncrement() {
+  //has the same effect as the constructor, the reference to this is not undefined
+  handleIncrement = () => {
     console.log("Increment Clicked: " + this);
-  }
+  };
   render() {
     return (
       <div>
