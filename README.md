@@ -76,3 +76,11 @@ Rendering lists
 Conditional Rendering
 Handling Events
 Updating State
+
+Part 2:
+
+Pass data
+Raise and Handle Events
+Multiple Components in Sync
+Functional Components
+Lifecycle Hooks
