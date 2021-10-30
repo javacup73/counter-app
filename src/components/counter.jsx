@@ -25,7 +25,8 @@ class Counter extends React.Component {
     );
   }
   //has the same effect as the constructor, the reference to this is not undefined
-  handleIncrement = () => {
+  handleIncrement = (product) => {
+    console.log(product);
     this.setState({ count: this.state.count + 1 });
   };
   handleDecrement = () => {
@@ -38,7 +39,9 @@ class Counter extends React.Component {
         {this.renderTags()}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement}
+          onClick={() => {
+            this.handleIncrement({ id: 1 });
+          }}
           className="btn btn-secondary btn-sm m-2"
         >
           Increment
