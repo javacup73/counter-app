@@ -7,7 +7,7 @@ class Counter extends React.Component {
   //external components do not have access to internal state of other components
   //components cannot modify the values passed into the component from other components (immutable)
   state = {
-    value: this.props.value,
+    value: this.props.counter.value,
     tags: ["tag1", "tag2", "tag3"],
   };
   style = {
@@ -32,10 +32,11 @@ class Counter extends React.Component {
   handleDecrement = () => {
     this.setState({ value: this.state.value - 1 });
   };
+
   render() {
     return (
       <div>
-        <h4>Counter #{this.props.id}</h4>
+        <h4>Counter #{this.props.counter.id}</h4>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => {
@@ -50,6 +51,12 @@ class Counter extends React.Component {
           className="btn btn-secondary btn-sm m-2"
         >
           Decrement
+        </button>
+        <button
+          onClick={() => this.props.onDelete(this.props.counter.id)}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
         </button>
       </div>
     );
