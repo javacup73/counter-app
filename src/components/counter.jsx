@@ -11,7 +11,13 @@ class Counter extends React.Component {
     fontWeight: "bold",
     color: "black",
   };
+  //this lifecycle method allows us to make a decision whether to get new data by making an Ajax call
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps" + prevProps);
+    console.log("prevState" + prevState);
+  }
   render() {
+    console.log("Counter.. rendered");
     return (
       <div>
         <h4>Counter #{this.props.counter.id}</h4>
