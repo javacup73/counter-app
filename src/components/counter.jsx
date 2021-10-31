@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends React.Component {
   state = {
-    count: 0,
+    value: this.props.value,
     tags: ["tag1", "tag2", "tag3"],
   };
   style = {
@@ -10,10 +10,6 @@ class Counter extends React.Component {
     fontWeight: "bold",
     color: "black",
   };
-  //constructor() {
-  //  super();
-  //  this.handleIncrement = this.handleIncrement.bind(this);
-  // }
   renderTags() {
     if (this.state.tags.length === 0) return <p>There are no tags</p>;
     return (
@@ -25,18 +21,15 @@ class Counter extends React.Component {
     );
   }
   //has the same effect as the constructor, the reference to this is not undefined
-  handleIncrement = (product) => {
-    console.log(product);
-    this.setState({ count: this.state.count + 1 });
+  handleIncrement = () => {
+    this.setState({ value: this.state.value + 1 });
   };
   handleDecrement = () => {
-    this.setState({ count: this.state.count - 1 });
+    this.setState({ value: this.state.value - 1 });
   };
   render() {
     return (
       <div>
-        {this.state.tags.length === 0 && "Please create a new tag"}
-        {this.renderTags()}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => {
@@ -58,19 +51,19 @@ class Counter extends React.Component {
 
   getBadgeClasses() {
     let classes = "badge alert-";
-    switch (this.state.count) {
+    switch (this.state.value) {
       case 0:
         classes += "warning";
         break;
       default:
-        classes += this.state.count > 0 ? "primary" : "danger";
+        classes += this.state.value > 0 ? "primary" : "danger";
         break;
     }
     return classes;
   }
 
   formatCount() {
-    const { count } = this.state;
+    const { value: count } = this.state;
     return count == 0 ? "Zero" : count;
   }
 }
