@@ -6,33 +6,11 @@ class Counter extends React.Component {
   //props: is data that you can pass into the component from another component
   //external components do not have access to internal state of other components
   //components cannot modify the values passed into the component from other components (immutable)
-  //   state = {
-  //     // value: this.props.counter.value,
-  //     tags: ["tag1", "tag2", "tag3"],
-  //   };
   style = {
     fontSize: 10,
     fontWeight: "bold",
     color: "black",
   };
-  //   renderTags() {
-  //     if (this.state.tags.length === 0) return <p>There are no tags</p>;
-  //     return (
-  //       <ul>
-  //         {this.state.tags.map((tag) => (
-  //           <li key={tag}>{tag}</li>
-  //         ))}
-  //       </ul>
-  //     );
-  //   }
-  //has the same effect as the constructor, the reference to this is not undefined
-  //   handleIncrement = () => {
-  //     this.setState({ value: this.state.value + 1 });
-  //   };
-  //   handleDecrement = () => {
-  //     this.setState({ value: this.state.value - 1 });
-  //   };
-
   render() {
     return (
       <div>
