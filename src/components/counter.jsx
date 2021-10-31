@@ -16,6 +16,9 @@ class Counter extends React.Component {
     console.log("prevProps" + prevProps);
     console.log("prevState" + prevState);
   }
+  componentWillUnmount() {
+    console.log("Counter - unmount");
+  }
   render() {
     console.log("Counter.. rendered");
     return (
