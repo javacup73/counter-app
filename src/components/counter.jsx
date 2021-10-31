@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class Counter extends React.Component {
+  //difference between state and props:
+  //state: is internal to the component (private data)
+  //props: is data that you can pass into the component from another component
+  //external components do not have access to internal state of other components
   state = {
     value: this.props.value,
     tags: ["tag1", "tag2", "tag3"],
