@@ -5,6 +5,7 @@ class Counter extends React.Component {
   //state: is internal to the component (private data)
   //props: is data that you can pass into the component from another component
   //external components do not have access to internal state of other components
+  //components cannot modify the values passed into the component from other components (immutable)
   state = {
     value: this.props.value,
     tags: ["tag1", "tag2", "tag3"],
