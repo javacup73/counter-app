@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './components/navbar';
 import Counters from './components/counters'
 import './App.css';
+import RandomPerson from './components/randomPerson';
 
 class App extends React.Component {
   state = {
@@ -61,6 +62,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
       <NavBar totalCounters={this.state.counters.filter(c=>c.value>0).length}/><main className="container">
+        <RandomPerson/>
         <Counters counters={this.state.counters} onReset = {this.handleReset} onIncrement = {this.handleIncrement} onDecrement={this.handleDecrement} onDelete = {this.handleDelete}  />
       </main>
       </React.Fragment>
