@@ -6,9 +6,12 @@ import './App.css';
 class App extends React.Component {
   render() { 
     return (
-      <><NavBar /><main className="container">
+      <React.Fragment>
+      <NavBar /><main className="container">
         <Counters />
-      </main></>);
+      </main>
+      </React.Fragment>
+      );
   }
 }
 export default App;
