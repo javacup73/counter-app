@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+//stateless functional component
 class NavBar extends React.Component {
   render() {
     return (
